@@ -2,6 +2,16 @@ console.log('Welcome client.js');
 const msgareaScroll = document.querySelector(".messagearea");
 const socket = io();
 
+//Grabing name and group gorm url using Qs library
+const {username,grp} = Qs.parse(location.search,{
+    ignoreQueryPrefix: true
+});
+
+console.log(username,grp);   
+
+//Emit username and grp to server side
+socket.emit("JoinGrp",{username,grp})
+
 //Grabing msg and using JS display it in frontend with desired format
 socket.on('message', (msg) => {
     outputMsg(msg, "right");

@@ -9,6 +9,12 @@ const {
 
 //getting utils
 const formatMsg = require('./utils/message');
+const {
+    userJoin,
+    getCurrentUser,
+    userLeave,
+    getGrpUsers
+} = require('./utils/user');
 
 const botName = "Chat Bot"
 const app = express();
@@ -34,23 +40,39 @@ app.use('/', (req, res, next) => {
 //Starting socket connections
 io.on('connection', (socket) => {
 
-    //Welcome event
-    socket.emit('message', formatMsg(botName,"Welcome to Chat!"));
+    //Join the room and handle to send message to specific grp
+    socket.on('JoinGrp', ({
+        username,
+        grp
+    }) => {
+        const user = userJoin(socket.id, username, grp);
 
-    // Broadcast when user enter or leave
-    socket.broadcast.emit('message', formatMsg('USER',"user enter"));
+        //join the respective grp using socket.join
+        socket.join(user.grp);
+
+        //Welcome event
+        socket.emit('recieve', formatMsg(botName, "Welcome to Chat!"));
+
+        // Broadcast when user enter or leave
+        socket.broadcast.to(user.grp).emit('recieve', formatMsg(botName, `${user.username} has joined the chat`));
+
+    });
 
     // Grabing msg from dom and emiting it to client.js to give output
     socket.on('message', (msg) => {
-        io.emit('message', formatMsg('USER',msg));
+        const user = getCurrentUser(socket.id);
+        socket.emit('message', formatMsg(user.username, msg));
         // Brodcast msg to all other user which append on left
-        socket.broadcast.emit('recieve', formatMsg('USER',msg));
+        socket.broadcast.to(user.grp).emit('recieve', formatMsg(user.username, msg));
     });
-
 
     // Disconnect the socket when user leave
     socket.on('disconnect', (msg) => {
-        io.emit('message', formatMsg('USER','user leave'));
+        const user = userLeave(socket.id);
+        if(user){
+            io.to(user.grp).emit('recieve', formatMsg(botName, `${user.username} has Left the chat`));
+        }
+ 
     });
 });
 
