@@ -2,8 +2,8 @@ console.log('Welcome client.js');
 const msgareaScroll = document.querySelector(".messagearea");
 const socket = io();
 const grpid = document.getElementById('grpid');
-const grpUsr = document.getElementById('grpUsr');
-
+// const grpUsr = document.getElementById('grpUsr');
+const userList = document.getElementById('usersidd');
 //Grabing name and group gorm url using Qs library
 const {username,grp} = Qs.parse(location.search,{
     ignoreQueryPrefix: true
@@ -74,22 +74,32 @@ function outputGrpName(grp) {
     grpid.innerText = grp;
 }
 
-function outputUsers(users) {
-    console.log(users);
+// function outputUsers(users) {
+//     console.log(users);
 
-    const temp =[];
-    users.forEach(user=>{
+//     const temp =[];
+//     users.forEach(user=>{
 
-        if(temp.findIndex(name=>user.username===name)===-1){
-            temp.push(user.username);
-            document.getElementById('toemp').innerHTML="";
-            const div = document.createElement('div');
-        div.classList.add('grp-list');
-        div.innerHTML = `<h5>${user.username}</h5>`
-        document.querySelector('.grp-scroll').appendChild(div);
-        }
+//         if(temp.findIndex(name=>user.username===name)===-1){
+//             temp.push(user.username);
+//             document.getElementById('toemp').innerHTML="";
+//             const div = document.createElement('div');
+//         div.classList.add('grp-list');
+//         div.innerHTML = `<h5>${user.username}</h5>`
+//         document.querySelector('.grp-scroll').appendChild(div);
+//         }
         
-    });
-    console.log(temp);
-   }
+//     });
+//     console.log(temp);
+//    }
   
+// Add users to DOM
+function outputUsers(users) {
+    userList.innerHTML = '';
+    users.forEach(user=>{
+      const li = document.createElement('li');
+      li.classList.add('grp-list');
+      li.innerText = user.username;
+      userList.appendChild(li);
+    });
+   }
