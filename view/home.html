@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/homeStyle.css">
+    <title>Chat App</title>
+</head>
+
+<body>
+    <div class="inner">
+        <header>
+
+        </header>
+    </div>
+
+    <div class="outer">
+        <div class="row">
+            <div class="col-3 sidebar">
+                <div class="head group">
+                    Groups
+                    <div class="logo-img"><img class="main-img" src="/logo/message.png"></div>
+                </div>
+                <div class="grp-full">
+                    <div class="grp-name group">
+                        <div class="logo-img"><img class="main-img" src="/logo/people.png"></div>
+                        <div class="name-grp">Group Members</div>
+                    </div>
+                    <div class="grp-scroll">
+                        <div class="grp-list"><a href="#">bhavik</a></div>
+                        <div class="grp-list"><a href="#">bhavik</a></div>
+                        <div class="grp-list"><a href="#">bhavik</a></div>
+
+                    </div>
+
+
+                </div>
+                <div class="grp-full">
+                    <div class="grp-name group">
+                        <div class="logo-img"><img class="main-img" src="/logo/group.png"></div>
+                        <div class="name-grp"> Group Name</div>
+                    </div>
+                    <div class="grp-list"><a href="#">College</a></div>
+                    <div class="grp-list"><a href="#">School</a></div>
+                    <div class="grp-list"><a href="#">Best Friend</a></div>
+                    <div class="grp-list"><a href="#">Family</a></div>
+                    <div class="grp-list"><a href="#">Exam Group</a></div>
+                    <div class="grp-list"><a href="#">Timepass Group</a></div>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="chatbar">
+                    <div class="head">
+                        <div class="main-img"
+                            style="background-image: url(https://image.flaticon.com/icons/svg/145/145867.svg)"></div>
+                        <div class="head-name">Bhavik</div>
+                    </div>
+
+                    <div class="messagearea">
+                        <div class="msg leftarea">
+                            <div class="msg-img"
+                                style="background-image: url(https://image.flaticon.com/icons/svg/327/327779.svg)">
+                            </div>
+                            <div class="bubble">
+                                <div class="msg-info">
+                                    <div class="rname">Meet</div>
+                                    <div class="time">14:45</div>
+                                </div>
+                                <div class="msg-text">
+                                    Hi, welcome to Chat Group
+                                </div>
+                            </div>
+                        </div>
+                        <div class="msg rightarea">
+                            <div class="msg-img"
+                                style="background-image: url(https://image.flaticon.com/icons/svg/145/145867.svg)">
+                            </div>
+                            <div class="bubble">
+                                <div class="msg-info">
+                                    <div class="lname">Bhavik</div>
+                                    <div class="time">14:45</div>
+                                </div>
+                                <div class="msg-text">
+                                    You can change your name in JS section!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <form class="msger-inputarea">
+                    <input type="text" class="msger-input" id="message" placeholder="Enter your message...">
+                    <button type="submit" class="msger-send-btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/jquery-3.5.1.min.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/client.js"></script>
+    <!-- AS WE DECLARE express.static IN app.js on give relative path from static folder -->
+</body>
+
+</html>
