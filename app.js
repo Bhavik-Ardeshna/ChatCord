@@ -28,6 +28,9 @@ app.use('/', (req, res, next) => {
     res.sendFile(__dirname + '/view/index.html');
 });
 
+
+
+
 //Starting socket connections
 io.on('connection', (socket) => {
 
@@ -50,6 +53,9 @@ io.on('connection', (socket) => {
         io.emit('message', formatMsg('USER','user leave'));
     });
 });
+
+
+
 
 
 const PORT = 3000 || process.env.PORT;
