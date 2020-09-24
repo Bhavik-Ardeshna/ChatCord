@@ -56,6 +56,11 @@ io.on('connection', (socket) => {
         // Broadcast when user enter or leave
         socket.broadcast.to(user.grp).emit('recieve', formatMsg(botName, `${user.username} has joined the chat`));
 
+        io.to(user.grp).emit("grpUser", {
+            grp: user.grp,
+            users: getGrpUsers(user.grp)
+        });
+
     });
 
     // Grabing msg from dom and emiting it to client.js to give output
@@ -69,10 +74,15 @@ io.on('connection', (socket) => {
     // Disconnect the socket when user leave
     socket.on('disconnect', (msg) => {
         const user = userLeave(socket.id);
-        if(user){
+        if (user) {
             io.to(user.grp).emit('recieve', formatMsg(botName, `${user.username} has Left the chat`));
+
+            io.to(user.grp).emit("grpUser", {
+                grp: user.grp,
+                users: getGrpUsers(user.grp)
+            });
         }
- 
+
     });
 });
 

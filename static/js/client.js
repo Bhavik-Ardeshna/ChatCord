@@ -1,6 +1,8 @@
 console.log('Welcome client.js');
 const msgareaScroll = document.querySelector(".messagearea");
 const socket = io();
+const grpid = document.getElementById('grpid');
+const grpUsr = document.getElementById('grpUsr');
 
 //Grabing name and group gorm url using Qs library
 const {username,grp} = Qs.parse(location.search,{
@@ -9,8 +11,15 @@ const {username,grp} = Qs.parse(location.search,{
 
 console.log(username,grp);   
 
+document.getElementById('hdname').innerText = username;
+
 //Emit username and grp to server side
 socket.emit("JoinGrp",{username,grp})
+
+socket.on("grpUser",({grp,users})=>{
+    outputGrpName(grp);
+    outputUsers(users);
+})
 
 //Grabing msg and using JS display it in frontend with desired format
 socket.on('message', (msg) => {
@@ -60,3 +69,27 @@ function outputMsg(msg, side) {
 
     document.querySelector('.messagearea').appendChild(div);
 }
+
+function outputGrpName(grp) {
+    grpid.innerText = grp;
+}
+
+function outputUsers(users) {
+    console.log(users);
+
+    const temp =[];
+    users.forEach(user=>{
+
+        if(temp.findIndex(name=>user.username===name)===-1){
+            temp.push(user.username);
+            document.getElementById('toemp').innerHTML="";
+            const div = document.createElement('div');
+        div.classList.add('grp-list');
+        div.innerHTML = `<h5>${user.username}</h5>`
+        document.querySelector('.grp-scroll').appendChild(div);
+        }
+        
+    });
+    console.log(temp);
+   }
+  

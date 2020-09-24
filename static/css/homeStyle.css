@@ -63,10 +63,10 @@ header p {
 
 
 .grp-list{
-    height: 50px;
+    /* height: 0px; */
     background-color:  #eee;
     border-bottom:0.3px rgb(71, 179, 179)   solid;
-    padding: 18px 7px ;
+    padding: 5px 7px 5px 10px ;
     /* margin-bottom: 2px; */
     /* box-shadow: 10px 15px 15px -5px rebeccapurple; */
 }
@@ -102,7 +102,7 @@ header p {
 }
 
 .grp-scroll{
-    max-height: 300px;
+    max-height: 320px;
     overflow-y: auto;
 }
 .grp-scroll .grp-list a{
