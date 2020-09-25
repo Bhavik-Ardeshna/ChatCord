@@ -1,0 +1,264 @@
+
+body {
+    margin: 0px;
+    height: 100vh;
+    background-color:rgb(216, 216, 216);
+    font-family: Helvetica, sans-serif;
+
+}
+
+/* by box-sizing we can give padding border which we has given in [class col] */
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+#hdname{
+    font-size: 1em;
+    position: absolute;
+    /* top: 4px; */
+}
+
+header {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    height: 170px;
+    background-color:rgb(32, 39, 56);
+}
+
+header p {
+    display: inline-block;
+}
+
+.row::after {
+    contain: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 0px;
+}
+
+.sidebar {
+    background-color: #eee;
+    height: 660px;
+}
+
+
+.head {
+    padding: 15px;
+}
+
+.group{
+    font-size: 1.2em;
+    font-weight: 300 ;
+    padding:6px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.grp-list{
+    height: 50px;
+    background-color:  #eee;
+    border-bottom:0.3px rgb(71, 179, 179)   solid;
+    padding-top: 15px;
+    font-family: 'Courgette', cursive;
+    font-size: 1.2em;
+    padding-left: 20px;
+
+}
+.grp-list:hover{
+    background-color: rgb(140, 194, 194);
+
+}
+
+.grp-full{
+    box-shadow: 0 15px 15px -5px rgb(241, 216, 216);
+}
+
+
+.grp-n{
+    height: 50px;
+    background-color:  #eee;
+    border-bottom:0.3px rgb(71, 179, 179)   solid;
+    padding: 18px 7px ;
+}
+
+.grp-name{
+    height: 65px;
+    background-color: rgba(214, 209, 209, 0.712);
+    padding: 18px;
+    font-size: 1.3em;
+    font-weight: 300;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.name-grp{
+    position: relative;
+    top:-41px;
+    left:35px;
+    font-family: 'Lemonada', cursive;
+}
+
+#usersidd{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding-top: 0px;
+}
+.grp-scroll{
+
+    max-height: 320px;
+    overflow-y: auto;
+    margin-left: -40px;
+    
+}
+.grp-scroll .grp-list {
+    /* padding: 50px 5px; */
+}
+.outer {
+    position: absolute;
+    top: 11px;
+    width: 1350px;
+    margin: 2% 5.5%;
+    border: 2px solid #ddd;
+    box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
+}
+
+.chatbar {
+    width: 100%;
+    min-height: 597px;
+    box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
+}
+
+.chatbar .head {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 2px solid #ddd;
+    background: #eee;
+    color: #666;
+    height: 50px;
+}
+
+.leave-btn {
+    padding: 5px 7px;
+    cursor: pointer;
+}
+
+.msg {
+    margin-bottom: 10px;
+}
+
+.msg-img {
+    width: 50px;
+    height: 50px;
+}
+
+.main-img{
+    width: 30px;
+    height: 30px;
+}
+.head-name{
+    left:50px;
+    top:14px;
+}
+.bubble {
+    padding: 15px;
+}
+
+.msg-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.time {
+    font-size: 0.85em;
+}
+
+.rightarea .msg-img {
+    margin-left: 5px;
+}
+
+.msger-inputarea {
+    display: flex;
+    padding: 10px;
+    border-top: 2px solid #ddd;
+    background: #eee;
+}
+
+.msger-inputarea * {
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 1em;
+}
+
+
+.msger-send-btn {
+    margin-left: 10px;
+    background: rgb(0, 196, 65);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.23s;
+}
+
+
+
+
+/* Dimension for col */
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}

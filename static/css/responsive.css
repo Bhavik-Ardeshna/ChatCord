@@ -1,0 +1,104 @@
+body{
+    margin: 0;
+}
+#hdname{
+    font-size: 1.3em;
+    position: absolute;
+    top: 4px;
+}
+
+.inner{
+    display: none;
+}
+
+.sidebar{
+    display: none;
+}
+
+
+.head {
+    padding: 6px;
+
+}
+
+.chatbar {
+    width: 100%;
+    height: 93vh;  
+}
+
+.leave-btn {
+    width: 70px;
+    height: 20px;
+    font-size: 0.5em;
+}
+
+.msg {
+    margin-bottom: 1px;
+}
+
+.msg-img {
+    width: 30px;
+    height: 30px;
+    
+}
+
+.main-img{
+    width: 20px;
+    height: 20px;
+}
+
+.head-name{
+    left:40px;
+    top:14px;
+}
+
+.bubble {
+    padding: 10px;
+}
+
+.msg-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.time {
+    font-size: 0.7em;
+}
+.leftarea{
+    margin-bottom: 7px;
+}
+.rightarea .msg-img {
+    margin-left: 5px;
+}
+
+.rightarea .bubble {
+    width: 44%;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.msger-inputarea {
+    display: flex;
+    border-top: 2px solid #ddd;
+    background: #eee;
+}
+
+.msger-inputarea * {
+    
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 1em;
+}
+
+.msger-send-btn {
+    background: rgb(0, 196, 65);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.23s;
+    width: 70px;
+    font-size: 0.8em;
+}
+
