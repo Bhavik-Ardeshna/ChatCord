@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start":"nodemon app"
   },
+  "engines": {
+    "node": "6.14.6"
+  },
   "author": "Arvik",
   "license": "ISC",
   "dependencies": {
