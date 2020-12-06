@@ -122,9 +122,9 @@ header p {
 }
 .outer {
     position: absolute;
-    top: 11px;
-    width: 1350px;
-    margin: 2% 5.5%;
+    top: 20px;
+    width: 1580px;
+    margin: 3.4% 10%;
     border: 2px solid #ddd;
     box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
 }
